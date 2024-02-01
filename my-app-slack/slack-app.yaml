@@ -2,12 +2,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 3-tier-app
+  name: demo
   namespace: argocd
   annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: alerts
+    notifications.argoproj.io/subscribe.on-deleted.slack: alerts
     notifications.argoproj.io/subscribe.on-deployed.slack: alerts
     notifications.argoproj.io/subscribe.on-sync-failed.slack: alerts
-    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: alerts
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.slack: alerts
+    notifications.argoproj.io/subscribe.on-health-degraded.slack: alerts  
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:

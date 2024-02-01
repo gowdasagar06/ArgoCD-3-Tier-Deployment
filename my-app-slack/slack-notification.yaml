@@ -8,7 +8,7 @@ data:
   context: |
     argocdUrl: http://afbce5ee7401c49be8b27b5a059dfbc2-1085337599.ap-south-1.elb.amazonaws.com:80
   service.slack: |
-    token: $slack-token
+    token: xoxb-6578584968481-6579203312417-AtQ1yYihgADvthw6JaQjjknm
   template.app-created: |
     email:
       subject: Application {{.app.metadata.name}} has been created.
