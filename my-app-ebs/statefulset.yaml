@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mysqlserver
+  namespace: prod
+spec:
+  replicas: 1
+  serviceName: mysql
+  selector:
+    matchLabels:
+      app: mysql
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      terminationGracePeriodSeconds: 10
+      volumes:
+        - name: mysql-pv-storage
+          persistentVolumeClaim:
+            claimName: ebs-pvc
+      containers:
+        - name: mysql
+          image: gowdasagar/3-tier-arch:db-mysql
+          imagePullPolicy: Always
+          ports:
+            - name: tpc
+              protocol: TCP
+              containerPort: 3306
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+               secretKeyRef:
+                key: ROOT_PASSWORD
+                name: mysecret
+            - name: MYSQL_DATABASE
+              valueFrom:
+               secretKeyRef:
+                key: MYSQL_DATABASE
+                name: mysecret       
+          volumeMounts:
+            - name: mysql-pv-storage
+              mountPath: /var/lib/mysql
