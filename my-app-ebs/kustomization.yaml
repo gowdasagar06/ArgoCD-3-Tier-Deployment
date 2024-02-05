@@ -4,8 +4,8 @@ namespace: prod
 resources:
 - namespace.yaml
 - secret.yaml
-- pv.yaml
-- pvc.yaml
+- storage-ebs.yaml
+- pvc-ebs.yaml
 - statefulset.yaml
 - sqlservice.yaml
 - mattermost.yaml
