@@ -4,6 +4,7 @@ metadata:
   name: rollout-ngnix-active # <- active 
   namespace: argo-rollouts
 spec:
+  type: LoadBalancer
   selector:
     app: ngnix
   ports:
