@@ -4,10 +4,10 @@ metadata:
   name: mysql-pv-claim
   namespace: prod
 spec:
-  storageClassName: manual
+  storageClassName: efs-sc
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
+      storage: 5Gi
 
