@@ -21,7 +21,7 @@ spec:
           # image: gowdasagar/flaskapp:latest
           # image: gowdasagar/2tier-blue-green:green
           image: gowdasagar/2tier-blue-green:blue
-          env:
+          env: 
             - name: MYSQL_HOST
               value: mysql          
             - name: MYSQL_PASSWORD
