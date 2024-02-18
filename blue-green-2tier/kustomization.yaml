@@ -12,8 +12,6 @@ resources:
   - pvc-ebs.yml
   - mysql-deployment.yml
   - mysql-svc.yml
-  - two-tier-app-deployment.yml
-  - two-tier-app-svc.yml
   - deployment.yaml
   - active-service.yaml
   - preview-service.yaml
