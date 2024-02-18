@@ -18,7 +18,9 @@ spec:
     spec:
       containers:
         - name: rollouts-demo
-          image: gowdasagar/flaskapp:latest
+          # image: gowdasagar/flaskapp:latest
+          image: gowdasagar/2tier-blue-green:green
+          # image: gowdasagar/2tier-blue-green:blue
           env:
             - name: MYSQL_HOST
               value: mysql          
