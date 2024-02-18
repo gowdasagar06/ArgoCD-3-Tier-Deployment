@@ -1,0 +1,16 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: rollout-bluegreen-preview
+  namespace: prod
+  annotations:
+    argocd.argoproj.io/sync-wave: "8"  
+spec:
+  selector:
+    app: rollout-bluegreen
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 5000
+  type: LoadBalancer
+
