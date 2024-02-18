@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active
-  # namespace: prod
+  namespace: prod
   # annotations:
   #   argocd.argoproj.io/sync-wave: "7"  
 spec:
