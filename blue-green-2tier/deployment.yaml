@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout  
 metadata:
   name: rollout-bluegreen
-  # namespace: prod
+  namespace: prod
   # annotations:
   #   argocd.argoproj.io/sync-wave: "6" 
 spec:
