@@ -3,8 +3,8 @@ apiVersion: v1
 metadata:
   name: rollout-bluegreen-active
   namespace: prod
-  # annotations:
-  #   argocd.argoproj.io/sync-wave: "7"  
+  annotations:
+    argocd.argoproj.io/sync-wave: "7"  
 spec:
   selector:
     app: rollout-bluegreen
