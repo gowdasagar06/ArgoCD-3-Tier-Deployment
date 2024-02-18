@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: mysql-initdb-config
   namespace: prod
-  annotations:
-    argocd.argoproj.io/sync-wave: "0"  
+  # annotations:
+  #   argocd.argoproj.io/sync-wave: "0"  
 data:
   init.sql: |
     CREATE DATABASE IF NOT EXISTS mydb;
